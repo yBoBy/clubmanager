@@ -1,2 +1,2 @@
 # clubmanager
-A python application to manager you clubs members, dutys and their inventory.
+A python application to manage you club's members, dutys and inventory.
