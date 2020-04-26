@@ -1,0 +1,9 @@
+# Ignore files that contain sensitive / personal data
+*.sqlite
+*.csv
+
+# Ignore bytecode files folder, created before program execution
+__pycache__/
+
+# Ignore PyCharm-IDE specific files
+.idea/
