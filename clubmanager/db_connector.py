@@ -79,9 +79,9 @@ class DatabaseManager:
 
             cursor.execute(ex_string, values)
             self.sql_connection.commit()
-            retVal = cursor.lastrowid
+            ret_val = cursor.lastrowid
             cursor.close()
-            return retVal
+            return ret_val
         except(AttributeError, lite.OperationalError, lite.IntegrityError) as e:
             if type(e).__name__ == 'AttributeError':
                 print(f"DB-CONNECTOR: Insert Operation into '{tablename}' with values '{kwargs.values()}' could not "
@@ -91,6 +91,6 @@ class DatabaseManager:
                 print(f"DB-CONNECTOR: Insert Operation into '{tablename}' with values '{kwargs.values()}' could not "
                       f"be executed - REASON: Invalid command syntax")
             elif type(e).__name__ == 'IntegrityError':
-                print(f"DB-CONNECTOR: Insert Operation into '{tablename}' with values '{values}' could not "
+                print(f"DB-CONNECTOR: Insert Operation into '{tablename}' with values '{kwargs.values()}' could not "
                       f"be executed - REASON: {e.args[0]}")
             return None
